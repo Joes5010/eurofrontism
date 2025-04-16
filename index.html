@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Eurofrontism</a></h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="core-principles.html">Core Principles</a>
+                <a href="flag-symbolism.html">Flag & Symbolism</a>
+                <a href="europa-knows-no-bounds.html">Europa Knows No Bounds</a>
+                <a href="european-history.html">European History</a>
+                <a href="contact.html" class="nav-button">Contact</a>
+                <a href="about.html" class="nav-button">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero">
+                <img src="eurofrontism-flag.png" alt="European Flag" class="flag">
+                <h1>Uniting Europe</h1>
+                <p class="lead">
+                    Advocating for a unified European federation, fostering collaboration,
+                    progress, and shared identity across the continent.
+                </p>
+                <div class="navigation">
+                    <a href="core-principles.html">Learn Our Principles</a>
+                    <a href="flag-symbolism.html">Explore the Symbolism</a>
+                    <a href="europa-knows-no-bounds.html">Europa Knows No Bounds</a>
+                    <a href="european-history.html">European History</a>
+                    <a href="contact.html" class="nav-button">Contact</a>
+                    <a href="about.html" class="nav-button">About</a>
+                </div>
+
+            </div>
+             <div id="map"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Eurofrontism. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+      var map = L.map('map').setView([54.5260, 15.2551], 4);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      L.marker([52.5200, 13.4050]).addTo(map).bindPopup("Berlin");
+      L.marker([48.8566, 2.3522]).addTo(map).bindPopup("Paris");
+      L.marker([41.9028, 12.4964]).addTo(map).bindPopup("Rome");
+      L.marker([51.5074, 0.1278]).addTo(map).bindPopup("London");
+    </script>
+</body>
+</html>
+
+
+
