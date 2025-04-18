@@ -41,3 +41,21 @@
     </footer>
 </body>
 </html>
+<!-- Dark Mode Toggle Button -->
+<button id="darkToggle" style="position:fixed;top:20px;right:20px;z-index:1000;padding:10px 14px;background-color:#333;color:white;border:none;border-radius:4px;cursor:pointer;">
+  🌙 Toggle Dark Mode
+</button>
+
+<script>
+  const toggle = document.getElementById('darkToggle');
+  const body = document.body;
+
+  if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark-mode');
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+  });
+</script>
